@@ -1,0 +1,118 @@
+#全局配置
+file:
+  base-path: /Users/huzekang/study/jdbc-service
+
+server:
+  protocol: http
+  address: 127.0.0.1
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+    basedir: ${user.home}/deployer/tomcat
+  servlet:
+    context-path: /
+
+#Srping相关配置
+spring:
+  profiles:
+    active: dev
+  #数据源配置
+  datasource:
+    time-between-eviction-runs-millis: 30000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    filters: stat
+    break-after-acquire-failure: true
+    connection-error-retry-attempts: 3
+    validation-query: SELECT 1
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      # Druid 连接池配置
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT getdate()
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      filters: stat,wall,log4j
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+      # Druid StatViewServlet配置
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: root
+        login-password: ENC(mX+YTdLX18rgkYFzivyi7A==)
+        allow:  # IP白名单 多个逗号分隔
+        deny:   # IP黑名单
+
+
+##your datasouce config
+source:
+  initial-size: 3
+  min-idle: 1
+  max-wait: 6000
+  max-active: 10
+  break-after-acquire-failure: true
+  connection-error-retry-attempts: 0
+  validationQueryTimeout: 30000
+
+  enable-query-log: true
+  result-limit: 1000000
+
+---
+
+#本地环境
+spring:
+  profiles: local
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/yiboard?serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&useSSL=false&nullNamePatternMatchesAll=true&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+
+
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 2000
+    global:
+      open: true
+    database: 0
+
+
+---
+
+#开发环境
+spring:
+  profiles: dev
+  datasource:
+      username: root
+      password: root
+      url: jdbc:mysql://192.168.1.150:3311/yiboard?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&useLegacyDatetimeCode=false&useSSL=false&nullNamePatternMatchesAll=true&useUnicode=true&allowPublicKeyRetrieval=true
+  #redis配置
+  redis:
+    host: 192.168.1.150
+    port: 6379
+    password:
+    timeout: 2000
+    global:
+      open: true
+    database: 0
+
+
+---
