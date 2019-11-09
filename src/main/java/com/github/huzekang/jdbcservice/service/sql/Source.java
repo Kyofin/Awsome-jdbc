@@ -13,6 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
+/**
+ * 对应数据库中source表的实体类
+ */
 public class Source extends BaseSource {
     private Long id;
 

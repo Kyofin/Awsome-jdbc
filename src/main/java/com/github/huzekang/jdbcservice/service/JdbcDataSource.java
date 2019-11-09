@@ -100,6 +100,7 @@ public class JdbcDataSource {
             if (!druidDataSource.isClosed()) {
                 return druidDataSource;
             } else {
+                // 检查以及失效则从map中去掉
                 dataSourceMap.remove(key);
             }
         }
