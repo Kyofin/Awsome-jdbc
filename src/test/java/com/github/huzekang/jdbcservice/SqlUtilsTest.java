@@ -58,6 +58,10 @@ public class SqlUtilsTest {
 
     }
 
+
+    /**
+     * 获取一个jdbc连接中的数据库列表
+     */
     @Test
     public void getDatabases() {
         String sourceCreateJson = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
@@ -81,6 +85,9 @@ public class SqlUtilsTest {
     }
 
 
+    /**
+     * 获取指定数据库的所有表
+     */
     @Test
     public void getTableList() {
         String sourceCreateJson = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
@@ -104,6 +111,9 @@ public class SqlUtilsTest {
     }
 
 
+    /**
+     * 获取指定表的信息
+     */
     @Test
     public void getTableInfo() {
         String sourceCreateJson = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
@@ -127,6 +137,9 @@ public class SqlUtilsTest {
     }
 
 
+    /**
+     * 获取sql中的字段信息
+     */
     @Test
     public void getSqlColumns() {
         String sourceCreateJson = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
