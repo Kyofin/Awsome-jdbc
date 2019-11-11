@@ -1,7 +1,9 @@
 package com.github.huzekang.jdbcservice;
 
 import cn.hutool.json.JSONUtil;
-import com.github.huzekang.jdbcservice.service.sql.*;
+import com.github.huzekang.jdbcservice.enums.TableInfo;
+import com.github.huzekang.jdbcservice.model.*;
+import com.github.huzekang.jdbcservice.core.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

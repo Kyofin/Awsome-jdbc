@@ -1,6 +1,6 @@
 
 
-package com.github.huzekang.jdbcservice.service;
+package com.github.huzekang.jdbcservice.exception;
 
 public class ServerException extends RuntimeException {
     public ServerException(String message) {

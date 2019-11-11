@@ -1,6 +1,6 @@
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.enums;
 
-import com.github.huzekang.jdbcservice.service.ServerException;
+import com.github.huzekang.jdbcservice.exception.ServerException;
 
 public enum SqlTypeEnum {
 

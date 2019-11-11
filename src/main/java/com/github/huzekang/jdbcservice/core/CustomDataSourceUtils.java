@@ -1,9 +1,10 @@
 
 
-package com.github.huzekang.jdbcservice.service;
+package com.github.huzekang.jdbcservice.core;
 
 import com.alibaba.druid.util.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.huzekang.jdbcservice.model.CustomDataSource;
 import com.github.huzekang.jdbcservice.util.Consts;
 import lombok.Getter;
 import org.springframework.util.CollectionUtils;

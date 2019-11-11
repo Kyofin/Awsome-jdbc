@@ -1,6 +1,6 @@
 
 
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;

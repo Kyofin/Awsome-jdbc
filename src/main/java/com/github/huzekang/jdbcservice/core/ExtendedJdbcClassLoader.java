@@ -1,6 +1,6 @@
 
 
-package com.github.huzekang.jdbcservice.service;
+package com.github.huzekang.jdbcservice.core;
 
 import com.alibaba.druid.util.StringUtils;
 import com.github.huzekang.jdbcservice.util.MD5Util;

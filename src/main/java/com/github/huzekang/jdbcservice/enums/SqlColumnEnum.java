@@ -1,7 +1,7 @@
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.enums;
 
 import com.alibaba.druid.util.StringUtils;
-import com.github.huzekang.jdbcservice.service.ServerException;
+import com.github.huzekang.jdbcservice.exception.ServerException;
 import com.github.huzekang.jdbcservice.util.Consts;
 import com.github.huzekang.jdbcservice.util.DateUtils;
 

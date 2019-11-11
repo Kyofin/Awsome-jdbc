@@ -2,23 +2,16 @@ package com.github.huzekang.jdbcservice;
 
 import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.fastjson.JSONObject;
-import com.github.huzekang.jdbcservice.service.DataTypeEnum;
-import com.github.huzekang.jdbcservice.service.JdbcDataSource;
-import com.github.huzekang.jdbcservice.service.SourceUtils;
-import com.github.huzekang.jdbcservice.service.sql.Source;
-import com.github.huzekang.jdbcservice.service.sql.SourceConfig;
-import com.github.huzekang.jdbcservice.service.sql.SourceCreate;
-import com.github.huzekang.jdbcservice.service.sql.SqlUtils;
+import com.github.huzekang.jdbcservice.enums.DataTypeEnum;
+import com.github.huzekang.jdbcservice.core.JdbcDataSource;
+import com.github.huzekang.jdbcservice.core.SourceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * 测试底层实现JdbcDataSource和SourceUtils

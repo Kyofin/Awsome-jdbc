@@ -1,13 +1,13 @@
 
 
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.model;
 
 
 import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.github.huzekang.jdbcservice.util.Consts;
-import com.github.huzekang.jdbcservice.service.SourceUtils;
+import com.github.huzekang.jdbcservice.core.SourceUtils;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

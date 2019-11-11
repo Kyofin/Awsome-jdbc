@@ -1,7 +1,8 @@
 
 
-package com.github.huzekang.jdbcservice.service;
+package com.github.huzekang.jdbcservice.model;
 
+import com.github.huzekang.jdbcservice.enums.DataTypeEnum;
 import com.github.huzekang.jdbcservice.util.Consts;
 import lombok.Getter;
 

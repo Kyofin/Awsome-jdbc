@@ -1,7 +1,9 @@
 
 
-package com.github.huzekang.jdbcservice.service;
+package com.github.huzekang.jdbcservice.core;
 
+import com.github.huzekang.jdbcservice.enums.DataTypeEnum;
+import com.github.huzekang.jdbcservice.model.DatasourceType;
 import com.github.huzekang.jdbcservice.util.Consts;
 import lombok.Getter;
 import org.springframework.boot.ApplicationArguments;

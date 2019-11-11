@@ -1,6 +1,6 @@
 
 
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.enums;
 
 public enum LogNameEnum {
     BUSINESS_SQL("BUSINESS_SQL"),

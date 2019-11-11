@@ -1,5 +1,6 @@
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.enums;
 
+import com.github.huzekang.jdbcservice.model.QueryColumn;
 import lombok.Data;
 
 import java.util.List;

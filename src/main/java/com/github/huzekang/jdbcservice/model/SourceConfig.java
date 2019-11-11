@@ -1,6 +1,6 @@
 
 
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.model;
 
 import lombok.Data;
 

@@ -1,8 +1,11 @@
 
-package com.github.huzekang.jdbcservice.service.sql;
+package com.github.huzekang.jdbcservice.core;
 
 import com.alibaba.druid.util.StringUtils;
-import com.github.huzekang.jdbcservice.service.*;
+import com.github.huzekang.jdbcservice.enums.*;
+import com.github.huzekang.jdbcservice.exception.ServerException;
+import com.github.huzekang.jdbcservice.exception.SourceException;
+import com.github.huzekang.jdbcservice.model.*;
 import com.github.huzekang.jdbcservice.util.Consts;
 import com.github.huzekang.jdbcservice.util.DateUtils;
 import com.github.huzekang.jdbcservice.util.MD5Util;
