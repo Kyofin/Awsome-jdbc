@@ -38,9 +38,13 @@ public class SourceServiceTest {
         sourceDataUpload.setTableName("t_patient2");
         sourceDataUpload.setMode(UploadModeEnum.REPLACE.getMode());
 
+        // 定义列
         Set<QueryColumn> queryColumns = new HashSet<>();
         queryColumns.add(new QueryColumn("id", "BIGINT"));
         queryColumns.add(new QueryColumn("age", "INTEGER"));
+        queryColumns.add(new QueryColumn("create_date", "TIMESTAMP"));
+         // todo varchar会报错？
+//        queryColumns.add(new QueryColumn("json", "VARCHAR"));
 
 
         sourceService.createTable(queryColumns,sourceDataUpload,source);

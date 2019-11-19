@@ -610,7 +610,7 @@ public class SqlUtils {
             }
             rs = metaData.getColumns(dbName, null, tableName, "%");
             while (rs.next()) {
-                columnList.add(new QueryColumn(rs.getString(4), rs.getString(6)));
+                columnList.add(new QueryColumn(rs.getString(4), rs.getString(6),rs.getString("REMARKS"),rs.getInt("COLUMN_SIZE")));
             }
         } catch (Exception e) {
             throw new ServerException(e.getMessage());

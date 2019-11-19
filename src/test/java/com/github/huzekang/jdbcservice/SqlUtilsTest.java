@@ -158,7 +158,7 @@ public class SqlUtilsTest {
         );
 
         // 使用加入jdbc连接后的sqlUtil
-        List<QueryColumn> columns = assemblySqlUtils.getColumns("select chart_name,user_id from yiboard.chart");
+        List<QueryColumn> columns = assemblySqlUtils.getColumns("select * from yiboard.chart");
         System.out.println(columns);
 
 
