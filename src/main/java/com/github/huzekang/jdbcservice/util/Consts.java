@@ -176,4 +176,11 @@ public class Consts {
 
     public static final String PATH_EXT_FORMATER = "ext" + File.separator + "%s" + File.separator + "%s" + File.separator;
 
+    /**
+     * sql ST模板
+     */
+    public static final String SQL_TEMPLATE = "templates/sql/sqlTemplate.stg";
+
+
+
 }

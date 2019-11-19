@@ -1,5 +1,8 @@
 package com.github.huzekang.jdbcservice.enums;
 
+/**
+ * 参考java.sql.Types
+ */
 public enum TypeEnum {
 
     BIT(-7, "BIT"),
