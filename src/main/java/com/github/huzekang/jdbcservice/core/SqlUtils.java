@@ -851,6 +851,13 @@ public class SqlUtils {
         return sql;
     }
 
+    /**
+     * 格式化type ：
+     *  如将 VARCHAR 转成 VARCHAR(255)
+     * @param type
+     * @return
+     * @throws ServerException
+     */
     public static String formatSqlType(String type) throws ServerException {
         if (!StringUtils.isEmpty(type.trim())) {
             type = type.trim().toUpperCase();

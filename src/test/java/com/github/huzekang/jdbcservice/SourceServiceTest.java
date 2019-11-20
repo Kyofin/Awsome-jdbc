@@ -1,6 +1,7 @@
 package com.github.huzekang.jdbcservice;
 
 import com.github.huzekang.jdbcservice.core.SourceService;
+import com.github.huzekang.jdbcservice.core.SqlUtils;
 import com.github.huzekang.jdbcservice.enums.UploadModeEnum;
 import com.github.huzekang.jdbcservice.model.QueryColumn;
 import com.github.huzekang.jdbcservice.model.Source;
@@ -24,6 +25,7 @@ public class SourceServiceTest {
     @Autowired
     SourceService sourceService;
 
+
     @Test
     public void createTable() {
         // 定义mysql数据源
@@ -40,9 +42,11 @@ public class SourceServiceTest {
 
         // 定义列
         Set<QueryColumn> queryColumns = new HashSet<>();
-        queryColumns.add(new QueryColumn("id", "BIGINT"));
-        queryColumns.add(new QueryColumn("age", "INTEGER"));
-        queryColumns.add(new QueryColumn("create_date", "TIMESTAMP"));
+        queryColumns.add(new QueryColumn("id", SqlUtils.formatSqlType("BIGINT")));
+        queryColumns.add(new QueryColumn("age", SqlUtils.formatSqlType("INTEGER")));
+        queryColumns.add(new QueryColumn("create_date", SqlUtils.formatSqlType("TIMESTAMP")));
+
+
          // todo varchar会报错？
 //        queryColumns.add(new QueryColumn("json", "VARCHAR"));
 
