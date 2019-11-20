@@ -29,7 +29,7 @@ public class SqlUtilsTest {
     @Test
     public void testSqlUtilConnect() {
         String sourceCreateJson = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
-        String sourceCreateJson2 = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost/foodmart2?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
+        String sourceCreateJson2 = "{\"id\":0,\"name\":\"test\",\"type\":\"jdbc\",\"description\":\"\",\"config\":{\"username\":\"root\",\"password\":\"eWJmP7yvpccHCtmVb61Gxl2XLzIrRgmT\",\"url\":\"jdbc:mysql://localhost/yiboard?serverTimezone=UTC\",\"parameters\":\"\",\"ext\":false,\"version\":\"\"},\"projectId\":17}";
         SourceCreate sourceCreate = JSONUtil.toBean(sourceCreateJson,SourceCreate.class);
         SourceCreate sourceCreate2 = JSONUtil.toBean(sourceCreateJson2,SourceCreate.class);
 
@@ -81,7 +81,7 @@ public class SqlUtilsTest {
 
         // 使用加入jdbc连接后的sqlUtil
         List<String> databases = assemblySqlUtils.getDatabases();
-        System.out.println(databases);
+       log.info(JSONUtil.toJsonStr(databases));
 
 
     }
@@ -107,7 +107,7 @@ public class SqlUtilsTest {
 
         // 使用加入jdbc连接后的sqlUtil
         List<QueryTable> tableList = assemblySqlUtils.getTableList("dhq_dev");
-        System.out.println(tableList);
+        log.info(JSONUtil.toJsonStr(tableList));
 
 
     }
@@ -133,7 +133,7 @@ public class SqlUtilsTest {
 
         // 使用加入jdbc连接后的sqlUtil
         TableInfo tableInfo = assemblySqlUtils.getTableInfo("yiboard", "chart");
-        System.out.println(tableInfo);
+        log.info(JSONUtil.toJsonStr(tableInfo));
 
 
     }
@@ -159,7 +159,7 @@ public class SqlUtilsTest {
 
         // 使用加入jdbc连接后的sqlUtil
         List<QueryColumn> columns = assemblySqlUtils.getColumns("select * from yiboard.chart");
-        System.out.println(columns);
+        log.info(JSONUtil.toJsonStr(columns));
 
 
     }
@@ -186,8 +186,8 @@ public class SqlUtilsTest {
         PaginateWithQueryColumns paginateWithQueryColumns = assemblySqlUtils
                 .query4Paginate("select id ,user_id ,chart_name from yiboard.chart",
                 2, 4, 100, 10, null);
-        System.out.println(paginateWithQueryColumns.getColumns());
-        System.out.println(paginateWithQueryColumns.getResultList() );
+        log.info(JSONUtil.toJsonStr(paginateWithQueryColumns.getColumns()));
+        log.info(JSONUtil.toJsonStr(paginateWithQueryColumns.getResultList()) );
     }
 
     /**
@@ -211,7 +211,7 @@ public class SqlUtilsTest {
 
         List<Map<String, Object>> mapList = assemblySqlUtils
                 .query4List("select id ,user_id ,chart_name from yiboard.chart", -1);
-        System.out.println(mapList);
+        log.info(JSONUtil.toJsonStr(mapList));
     }
 
 }
