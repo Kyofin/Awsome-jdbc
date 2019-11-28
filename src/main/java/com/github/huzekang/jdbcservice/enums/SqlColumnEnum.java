@@ -53,7 +53,7 @@ public enum SqlColumnEnum {
             if (sqlTypeEnum.type.equals(type)) {
                 Object object = null;
                 try {
-                    object = s2dbValue(type, value);
+                    object = string2dbValue(type, value);
                 } catch (Exception e) {
                     throw new ServerException(e.toString() + ":[" + type + ":" + value + "]");
                 }
@@ -62,8 +62,10 @@ public enum SqlColumnEnum {
         }
         return value;
     }
-
-    public static String toJavaType(String type) throws ServerException {
+    /**
+     * 将varchar(255)这样的列类型名字转成Java的类名字
+     */
+    public static String toJavaTypeName(String type) throws ServerException {
         type = type.toUpperCase();
         int i = type.indexOf("(");
         if (i > 0) {
@@ -77,7 +79,10 @@ public enum SqlColumnEnum {
         return null;
     }
 
-    private static Object s2dbValue(String type, String value) throws Exception {
+    /**
+     * 将字符串根据传的type：如varchar转成java的包装类
+     */
+    private static Object string2dbValue(String type, String value) throws Exception {
         if (StringUtils.isEmpty(value)) {
             return null;
         }

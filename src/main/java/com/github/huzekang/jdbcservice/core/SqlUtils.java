@@ -686,7 +686,7 @@ public class SqlUtils {
                     int i = 1;
                     for (QueryColumn queryColumn : headers) {
                         Object obj = map.get(queryColumn.getName());
-                        switch (SqlColumnEnum.toJavaType(queryColumn.getType())) {
+                        switch (SqlColumnEnum.toJavaTypeName(queryColumn.getType())) {
                             case "Short":
                                 pstmt.setShort(i, null == obj || String.valueOf(obj).equals(Consts.EMPTY) ? (short) 0 : Short.parseShort(String.valueOf(obj).trim()));
                                 break;
